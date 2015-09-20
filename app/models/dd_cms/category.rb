@@ -7,9 +7,9 @@ module DdCms
 
     field :title, type: String
 
-    belongs_to :category
-    has_many :categories
-    has_many :posts
+    belongs_to :category, class_name: 'DdCms::Category', inverse_of: :categories
+    has_many :categories, class_name: 'DdCms::Category', inverse_of: :category
+    has_many :posts, class_name: 'DdCms::Post', inverse_of: :category
 
     scope :root, -> { where(category_id: nil) }
 
