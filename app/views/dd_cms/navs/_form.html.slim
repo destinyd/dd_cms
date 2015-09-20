@@ -1,0 +1,6 @@
+= simple_form_for @nav do |f|
+  = f.input :title
+  = f.input :url
+  = f.input :nav_id, collection: DdCms::Nav.all, prompt: '* 顶级导航'
+
+  = f.button :submit, class: 'btn-primary'

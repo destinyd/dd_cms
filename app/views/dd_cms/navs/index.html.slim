@@ -1,0 +1,23 @@
+a.btn.btn-primary href=(new_nav_path) 新建导航
+
+= paginate @navs
+
+p
+
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th 标题
+      th 网址
+      th 
+      th 
+      th 
+      th 
+  tbody
+    - @navs.each do |nav|
+      = render "nav", nav: nav, parent_count: 0
+
+= paginate @navs
+
+a.btn.btn-primary href=(new_nav_path) 新建导航
+
