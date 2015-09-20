@@ -1,0 +1,27 @@
+a.btn.btn-primary href=(new_page_path) 新建页面
+
+= paginate @pages
+
+p
+
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th 标题
+      th 
+      th 
+  tbody
+    - @pages.each do |page|
+      tr
+        td
+          = page.title
+
+        td.edit
+          a href=(edit_page_path(page)) 修改
+
+        td.destroy
+          a href=(page_path(page)) data-method='delete' data-confirm='你确定?' 删除
+
+= paginate @pages
+
+a.btn.btn-primary href=(new_page_path) 新建页面

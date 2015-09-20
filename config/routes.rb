@@ -14,4 +14,6 @@ DdCms::Engine.routes.draw do
       put :move_down
     end
   end
+
+  resources :pages
 end
