@@ -8,12 +8,14 @@ DdCms::Engine.routes.draw do
     end
   end
 
-  resources :categories do
+  resources :categories, :shallow => true do
     member do
       put :move_up
       put :move_down
     end
+    resource :posts, :shallow => true
   end
 
   resources :pages
+  resources :posts, :shallow => true
 end

@@ -1,0 +1,7 @@
+= simple_form_for @post do |f|
+  = f.association :category, collection: DdCms::Category.all
+  = f.input :title
+  = f.input :slug
+  = f.input :content_body, as: :text
+
+  = f.button :submit, class: 'btn-primary'

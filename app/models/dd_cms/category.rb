@@ -9,6 +9,7 @@ module DdCms
 
     belongs_to :category
     has_many :categories
+    has_many :posts
 
     scope :root, -> { where(category_id: nil) }
 
