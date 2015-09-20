@@ -1,0 +1,21 @@
+a.btn.btn-primary href=(new_category_path) 新建分类
+
+= paginate @categories
+
+p
+
+table.table.table-bordered.table-striped
+  thead
+    tr
+      th 标题
+      th 
+      th 
+      th 
+      th 
+  tbody
+    - @categories.each do |category|
+      = render "category", category: category, parent_count: 0
+
+= paginate @categories
+
+a.btn.btn-primary href=(new_category_path) 新建分类

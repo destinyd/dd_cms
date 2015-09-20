@@ -7,4 +7,11 @@ DdCms::Engine.routes.draw do
       put :move_down
     end
   end
+
+  resources :categories do
+    member do
+      put :move_up
+      put :move_down
+    end
+  end
 end

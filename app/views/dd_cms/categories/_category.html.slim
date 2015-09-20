@@ -1,0 +1,24 @@
+tr
+  td
+    = '+' * parent_count
+    = category.title
+
+  td.position
+    a.btn.btn-default.btn-xs.move-down.updown href=(move_down_category_path(category)) data-method='put' title='向下移动'
+      /i.glyphicon.glyphicon-arrow-down
+      | 向下移动
+    a.btn.btn-default.btn-xs.move-up.updown href=(move_up_category_path(category)) data-method='put' title='向上移动'
+      /i.glyphicon.glyphicon-arrow-up
+      | 向上移动
+
+  td.new
+    a href=(new_category_path(category: {category_id: category.id})) 添加子导航
+
+  td.edit
+    a href=(edit_category_path(category)) 修改
+
+  td.destroy
+    a href=(category_path(category)) data-method='delete' data-confirm='你确定?' 删除
+
+- category.categories.each do |child|
+  = render 'category', category: child, parent_count: parent_count + 1

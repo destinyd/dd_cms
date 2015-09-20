@@ -58,11 +58,10 @@ module DdCms
         raise 'you must be override this method'
       end
 
-      def self.parent_id_name
-        raise 'you must be override this method'
-      end
-
       module ClassMethods
+        def parent_id_name
+          raise 'you must be override this method'
+        end
       end
     end
   end
