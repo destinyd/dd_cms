@@ -34,5 +34,7 @@ module Sample
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.i18n.default_locale = 'zh-CN'.to_sym
+    config.i18n.available_locales = 'zh-CN'.to_sym
   end
 end

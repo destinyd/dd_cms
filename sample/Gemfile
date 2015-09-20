@@ -43,3 +43,4 @@ gem 'play_auth', :github => 'mindpin/play_auth',
                  :tag => :latest
 
 gem 'dd_cms', path: '../'
+gem 'rails-i18n', '~> 4.0.0'

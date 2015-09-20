@@ -1,0 +1,22 @@
+zh-CN:
+  mongoid:
+    models:
+      dd_cms/nav: 导航
+      dd_cms/category: 分类
+      dd_cms/content: 内容
+      dd_cms/page: 页面
+      dd_cms/post: 文章
+    attributes:
+      dd_cms/nav:
+        nav: 父导航
+        nav_id: 父导航
+      dd_cms/post:
+        category: 分类
+
+  attributes:
+    title: 标题
+    slug: 链接
+    url: 网址
+    content_body: 内容
+    category: 分类
+    category_id: 分类
