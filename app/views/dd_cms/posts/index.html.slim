@@ -1,4 +1,4 @@
-a.btn.btn-primary href=(new_post_path) 新建文章
+a.btn.btn-primary href=(new_post_path) data-no-turbolink=true 新建文章
 
 = paginate @posts
 
@@ -20,11 +20,11 @@ table.table.table-bordered.table-striped
         td = post.category.try(:title)
 
         td.edit
-          a href=(edit_post_path(post)) 修改
+          a href=(edit_post_path(post)) data-no-turbolink=true 修改
 
         td.destroy
           a href=(post_path(post)) data-method='delete' data-confirm='你确定?' 删除
 
 = paginate @posts
 
-a.btn.btn-primary href=(new_post_path) 新建文章
+a.btn.btn-primary href=(new_post_path) data-no-turbolink=true 新建文章

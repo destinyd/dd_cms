@@ -2,6 +2,6 @@
   = f.association :category, collection: DdCms::Category.all
   = f.input :title
   = f.input :slug
-  = f.input :content_body, as: :text
+  = f.input :content_body, :as => :kindeditor
 
   = f.button :submit, class: 'btn-primary'

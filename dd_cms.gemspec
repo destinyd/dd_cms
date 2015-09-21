@@ -42,4 +42,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'kaminari-bootstrap'
   spec.add_dependency 'slim'
   spec.add_dependency 'simple_form'
+  spec.add_dependency 'rails_kindeditor'
 end

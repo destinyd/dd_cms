@@ -1,5 +1,10 @@
 DdCms::Engine.routes.draw do
   root 'home#index'
+  
+  scope path: '/kindeditor', as: 'kindeditor' do
+    post "/upload" => "assets#create"
+    get  "/filemanager" => "assets#list"
+  end
 
   resources :navs do
     member do

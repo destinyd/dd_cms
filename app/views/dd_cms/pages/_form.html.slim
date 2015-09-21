@@ -1,6 +1,6 @@
 = simple_form_for @page do |f|
   = f.input :title
   = f.input :slug
-  = f.input :content_body, as: :text
+  = f.input :content_body, :as => :kindeditor
 
   = f.button :submit, class: 'btn-primary'

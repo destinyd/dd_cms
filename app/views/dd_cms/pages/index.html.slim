@@ -1,4 +1,4 @@
-a.btn.btn-primary href=(new_page_path) 新建页面
+a.btn.btn-primary href=(new_page_path) data-no-turbolink=true 新建页面
 
 = paginate @pages
 
@@ -17,11 +17,11 @@ table.table.table-bordered.table-striped
           = page.title
 
         td.edit
-          a href=(edit_page_path(page)) 修改
+          a href=(edit_page_path(page)) data-no-turbolink=true 修改
 
         td.destroy
           a href=(page_path(page)) data-method='delete' data-confirm='你确定?' 删除
 
 = paginate @pages
 
-a.btn.btn-primary href=(new_page_path) 新建页面
+a.btn.btn-primary href=(new_page_path) data-no-turbolink=true 新建页面
