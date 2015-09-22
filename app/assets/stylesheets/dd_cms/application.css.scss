@@ -1,4 +1,8 @@
 /*
- *= require_tree .
+ *= require ./bootstrap
+ *= require ./bootstrap_setup
+ *= require_directory ./back/lib
+ *= require_directory ./back/pages
+ *= require ./ui
  *= require_self
  */
