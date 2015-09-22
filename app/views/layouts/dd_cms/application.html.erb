@@ -22,15 +22,13 @@
       </div>
       <!-- Top Menu Items -->
       <ul class="nav navbar-right top-nav">
-        <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-fw fa-power-off"></i>登出
-            <% end if nil -%>
-          </li>
-        </ul>
+        <li>
+          <a href="#"><i class="fa fa-user"></i><%= current_user.name %></a>
+        </li>
+        <li>
+          <%= link_to root_url + 'auth/logout', method: :delete, data: {confirm: '你确定?'} do %>
+            <i class="fa fa-fw fa-power-off"></i>登出
+          <% end -%>
         </li>
       </ul>
       <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
