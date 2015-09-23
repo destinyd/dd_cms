@@ -44,3 +44,4 @@ gem 'play_auth', :github => 'mindpin/play_auth',
 
 gem 'dd_cms', path: '../'
 gem 'rails-i18n', '~> 4.0.0'
+gem 'rails_kindeditor'

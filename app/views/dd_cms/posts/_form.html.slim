@@ -2,6 +2,19 @@
   = f.association :category, collection: DdCms::Category.all
   = f.input :title
   = f.input :slug
-  = f.input :content_body, :as => :kindeditor
+  .form-group.kindeditor.required.post_content_body
+    label.kindeditor.required for="post_content_body"
+      abbr title="required" *
+      | 内容
+    textarea.kindeditor.required#post_content_body name="post[content_body]"
+      = @post.content_body
+    script type="text/javascript"
+      | root_path =
+      | '
+      == root_path[0..-2]
+      | '
+      
+    javascript:
+      init_kind_editor('#post_content_body', {root: root_path})
 
   = f.button :submit, class: 'btn-primary'
