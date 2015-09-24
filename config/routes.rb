@@ -6,6 +6,8 @@ DdCms::Engine.routes.draw do
     get  "/filemanager" => "assets#list"
   end
 
+  post '/permlink' => 'home#permlink'
+
   resources :navs do
     member do
       put :move_up

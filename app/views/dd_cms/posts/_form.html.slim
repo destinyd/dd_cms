@@ -1,7 +1,7 @@
 = simple_form_for @post do |f|
   = f.association :category, collection: DdCms::Category.all
-  = f.input :title
-  = f.input :slug
+  = f.input :title, input_html: {class: 'permlink_from'}
+  = f.input :slug, input_html: {class: 'permlink_to'}
   .form-group.kindeditor.required.post_content_body
     label.kindeditor.required for="post_content_body"
       abbr title="required" *
@@ -18,3 +18,9 @@
       init_kind_editor('#post_content_body', {root: root_path})
 
   = f.button :submit, class: 'btn-primary'
+
+- if @post.new_record?
+  javascript:
+    bind_permlink({
+      root: root_path
+    })

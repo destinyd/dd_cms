@@ -1,6 +1,6 @@
 = simple_form_for @page do |f|
-  = f.input :title
-  = f.input :slug
+  = f.input :title, input_html: {class: 'permlink_from'}
+  = f.input :slug, input_html: {class: 'permlink_to'}
   .form-group.kindeditor.required.page_content_body
     label.kindeditor.required for="page_content_body"
       abbr title="required" *
@@ -17,3 +17,9 @@
       init_kind_editor('#page_content_body', {root: root_path})
 
   = f.button :submit, class: 'btn-primary'
+
+- if @page.new_record?
+  javascript:
+    bind_permlink({
+      root: root_path
+    })
