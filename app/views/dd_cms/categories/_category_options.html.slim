@@ -1,0 +1,8 @@
+- categories.each do |category|
+  - if category.id != @category.try(:id)
+    - if category.id == selected
+      option value=(category.id) selected=true = category.title_with_level
+    - else
+      option value=(category.id) = category.title_with_level
+
+    = render "dd_cms/categories/category_options", categories: category.categories, selected: selected, reject_id: try(:reject_id)

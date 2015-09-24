@@ -10,6 +10,7 @@ module DdCms
       else
         @category = Category.new category_params
       end
+      @categories = DdCms::Category.root
     end
 
     def create
@@ -17,6 +18,7 @@ module DdCms
       if @category.save
         redirect_to categories_path
       else
+        @categories = DdCms::Category.root
         render :new
       end
     end
@@ -27,6 +29,7 @@ module DdCms
 
     def edit
       @category = Category.find params[:id]
+      @categories = DdCms::Category.root
     end
 
     def update
@@ -34,6 +37,7 @@ module DdCms
       if @category.update_attributes category_params
         redirect_to categories_path
       else
+        @categories = DdCms::Category.root
         render :edit
       end
     end

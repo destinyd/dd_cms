@@ -1,5 +1,13 @@
 = simple_form_for @post do |f|
-  = f.association :category, collection: DdCms::Category.all
+  /= f.association :category, collection: @categories, label_method: :title_with_level
+  .form-group.select.required.post_category
+    label.select.required for="post_category_id"
+      abbr title="require" *
+      |  分类
+    select.select.required.form-control#post_category_id name="post[category_id]"
+      option 请选择分类
+      = render "dd_cms/categories/category_options", categories: @categories, selected: @post.category_id
+
   = f.input :title, input_html: {class: 'permlink_from'}
   = f.input :slug, input_html: {class: 'permlink_to'}
   .form-group.kindeditor.required.post_content_body

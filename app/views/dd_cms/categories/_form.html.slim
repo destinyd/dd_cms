@@ -1,5 +1,11 @@
 = simple_form_for @category do |f|
   = f.input :title
-  = f.input :category_id, collection: DdCms::Category.all, prompt: '* 顶级分类'
+  .form-group.select.required.category_category
+    label.select.required for="category_category_id"
+      abbr title="require" *
+      |  分类
+    select.select.required.form-control#category_category_id name="category[category_id]"
+      option * 顶级分类
+      = render "dd_cms/categories/category_options", categories: @categories, selected: @category.category_id
 
   = f.button :submit, class: 'btn-primary'
