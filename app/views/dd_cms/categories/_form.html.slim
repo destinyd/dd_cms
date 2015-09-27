@@ -5,7 +5,7 @@
       abbr title="require" *
       |  分类
     select.select.required.form-control#category_category_id name="category[category_id]"
-      option * 顶级分类
+      option value="" * 顶级分类
       = render "dd_cms/categories/category_options", categories: @categories, selected: @category.category_id
 
   = f.button :submit, class: 'btn-primary'
