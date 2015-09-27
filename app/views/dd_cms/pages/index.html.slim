@@ -8,13 +8,16 @@ table.table.table-bordered.table-striped
   thead
     tr
       th 标题
+      th 链接
       th 
       th 
   tbody
     - @pages.each do |page|
       tr
-        td
-          = page.title
+        td = page.title
+
+        td 
+          a href=(page.slug) = page.slug
 
         td.edit
           a href=(edit_page_path(page)) data-no-turbolink=true 修改
