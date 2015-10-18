@@ -2,7 +2,8 @@ tr
   td
     = '+' * parent_count
     = nav.title
-  td = nav.url
+  td 
+    a href=(nav.url) = nav.url
 
   td.position
     a.btn.btn-default.btn-xs.move-down.updown href=(move_down_nav_path(nav)) data-method='put' title='向下移动'
