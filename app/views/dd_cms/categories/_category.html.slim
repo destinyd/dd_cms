@@ -1,8 +1,9 @@
 tr
-  td = category.id
   td
     = '+' * parent_count
     = category.title
+  td
+    a href="/categories/#{category.id}" = "/categories/#{category.id}"
 
   td.position
     a.btn.btn-default.btn-xs.move-down.updown href=(move_down_category_path(category)) data-method='put' title='向下移动'
